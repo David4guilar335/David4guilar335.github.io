@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <!--Llenar el Title y los metadatos-->
+    <title>Unidad # | Actividad ??</title>
+    <link rel="icon" type="image/x-icon"href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="?"
+    <meta name="Descripcion" content="???"
+  </head>
+  <body>
+  <!Llenar el titulo y pegar el contenido">
+  <h>Unidad # | Actividad ?? :: Tema (???)</h>
+   </body>
+</html>
