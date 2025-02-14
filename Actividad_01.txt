@@ -2,15 +2,15 @@
 <html lang="es">
   <head>
   <!--Llenar el Title y los metadatos-->
-    <title>Unidad # | Actividad ??</title>
+    <title>Unidad 1 | Actividad 01</title>
     <link rel="icon" type="image/x-icon"href="favicon.ico">
     <meta charset="utf-8">
     <meta name="Autor" content="Jesus David">
     <meta name="Fecha" content="?"
-    <meta name="Descripcion" content="???"
+    <meta name="Descripcion" content="Hola Mundo"
   </head>
   <body>
   <!Llenar el titulo y pegar el contenido">
-  <h>Unidad # | Actividad ?? :: Tema (???)</h>
+  <h1>Unidad 1 | Actividad 01 :: Tema (Hola Mundo)</h1>
    </body>
 </html>
