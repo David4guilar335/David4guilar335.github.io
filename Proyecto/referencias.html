@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Referencias</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Autor" content="Tu Nombre">
+    <meta name="Descripción" content="Página de Referencias">
+    
+   <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        .background {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fortnite1.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        body {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            background: #0e0e0e;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        
+        .references {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .references h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .reference-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left-center;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .reference-box:hover {
+            transform: scale(1.05);
+        }
+
+        .reference-box img {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px; 
+        }
+
+        .reference-box a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+
+        .reference-box a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: black;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="background"></div>
+
+    
+    <div class="header">
+        <h1>Fortnite</h1>
+        <div class="nav-links">
+            <a href="proyecto.html">Inicio</a>
+            <a href="#">Noticias</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
+
+    
+    <div class="references">
+        <h2>Referencias</h2>
+        <div class="grid-container">
+           
+            <div class="reference-box">
+                <a href="https://www.epicgames.com/fortnite/" target="_blank">
+                    <img src="Fortnite.ico" alt="Fortnite">
+                    <span>Página Oficial de Fortnite</span>
+                </a>
+            </div>
+
+            
+            <div class="reference-box">
+                <a href="https://es.wikipedia.org/wiki/Fortnite" target="_blank">
+                    <img src="wikipedia icon.svg" alt="Wikipedia">
+                    <span>Wikipedia - Fortnite</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="footer">
+        <p>&copy; 2025</p>
+    </div>
+
+</body>
+</html>
+
+
