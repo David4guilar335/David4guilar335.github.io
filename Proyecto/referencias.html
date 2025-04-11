@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias Fortnite</title>
+
+    <!-- Iconos y fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #0a0a0a;
+            --texto: #ffffff;
+            --acento: #00a8ff;
+            --sombra: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        .header {
+            background-color: #121212;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .header h1 {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            font-size: 2.5rem;
+            color: var(--acento);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            color: var(--texto);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--acento);
+        }
+
+        /* Sección de referencias */
+        .references {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .references h2 {
+            font-size: 2rem;
+            color: var(--acento);
+            margin-bottom: 40px;
+        }
+
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .reference-box {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--sombra);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 260px;
+        }
+
+        .reference-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 168, 255, 0.3);
+        }
+
+        .reference-box img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .reference-box span {
+            display: block;
+            color: var(--texto);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .reference-box a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #121212;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Fortnite</h1>
+        <div class="nav-links">
+            <a href="proyecto.html">Inicio</a>
+            <a href="#">Noticias</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
+
+    <div class="references">
+        <h2>Referencias</h2>
+        <div class="grid-container">
+            <div class="reference-box">
+                <a href="https://www.epicgames.com/fortnite/" target="_blank">
+                    <img src="Fortnite.ico" alt="Fortnite">
+                    <span>Página Oficial de Fortnite</span>
+                </a>
+            </div>
+            <div class="reference-box">
+                <a href="https://es.wikipedia.org/wiki/Fortnite" target="_blank">
+                    <img src="wikipedia icon.svg" alt="Wikipedia">
+                    <span>Wikipedia - Fortnite</span>
+                </a>
+            </div>
+            <div class="reference-box">
+                <a href="https://www.instagram.com/fortnite/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="reference-box">
+                <a href="https://www.tiktok.com/@fortnite" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+            <div class="reference-box">
+                <a href="https://x.com/Fortnite" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                    <span>Twitter / X</span>
+                </a>
+            </div>
+            <div class="reference-box">
+                <a href="https://www.facebook.com/FortniteES" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2020 Epic Games, Inc. Todos los derechos reservados. Fortnite es una marca registrada de Epic Games.</p>
+        <p>Este es un sitio fan no oficial. No afiliado con Epic Games.</p>
+    </div>
+
+</body>
+</html>
+
+
+
