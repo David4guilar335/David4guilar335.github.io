@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redes Sociales - Fortnite</title>
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Paleta de colores ORIGINAL de Fortnite */
+    :root {
+      --black: #0A0A0A;
+      --dark: #121212;
+      --darker: #080808;
+      --darkest: #050505;
+      --light: #FFFFFF;
+      --primary: #00C8FF;
+      --accent: #FFD700;
+      --card-bg: #181818;
+      --header-bg: rgba(10, 10, 10, 0.98);
+      --border: 1px solid rgba(0, 200, 255, 0.1);
+      --border-hover: 1px solid var(--primary);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+      --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    
+    /* Reset y Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--black);
+      color: var(--light);
+      line-height: 1.7;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+    }
+    
+    /* Tipografía Fortnite */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Burbank Big Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fortnite-gradient-text {
+      background: var(--fortnite-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Header estilo Fortnite */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--header-bg);
+      padding: 15px 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo-text {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Estilos del título */
+    h1 {
+      font-size: 4rem;
+      font-family: 'Burbank Big Condensed', sans-serif;
+      background: linear-gradient(135deg, #00C8FF, #FFD700);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Contenedor para el título */
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 50vh;
+    }
+    
+    /* Estilos para el Contenedor de Texto */
+    .text-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(24, 24, 24, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+      text-align: center;
+    }
+    
+    .text-container p {
+      font-size: 1.2rem;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    /* Footer estilo Fortnite */
+    footer {
+      background-color: var(--darker);
+      color: var(--light);
+      padding: 80px 5% 40px;
+      position: relative;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--fortnite-gradient);
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    /* Estilos para las secciones de temporada */
+    .season-nav {
+      background-color: var(--darker);
+      padding: 15px 0;
+      position: sticky;
+      top: 80px;
+      z-index: 900;
+      border-bottom: var(--border);
+    }
+    
+    .season-nav-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .season-nav-item {
+      color: var(--light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(0, 200, 255, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .season-nav-item:hover {
+      background: var(--primary);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+    
+    .season-section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 65px;
+      color: var(--primary);
+      position: relative;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    
+    .weapons-grid, .items-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+    
+    .weapon-card, .item-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    
+    .weapon-card:hover, .item-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+    
+    .weapon-image, .item-image {
+      height: 150px;
+      background: var(--darker);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .weapon-image img, .item-image img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    
+    .weapon-info, .item-info {
+      padding: 20px;
+    }
+    
+    .weapon-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+    
+    .weapon-stats span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: var(--border);
+    }
+    
+    .timeline-date {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .gallery-item {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: var(--border);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-item p {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .title-container {
+        height: 40vh;
+      }
+      
+      h1 {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .season-nav-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .text-container p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-text">FORTNITE</span>
+    </div>
+<nav>
+  <a href="../proyecto.html">Inicio</a>
+  <a href="../referencias.html">Referencias</a>
+  <a href="../contacto.html">Contacto</a>
+  <a href="../contenido.html">Contenido</a>
+</nav>
+  </header>
+
+  <div class="title-container">
+    <h1>Temporada 1 || Capítulo 1</h1>
+  </div>
+
+  <!-- Menú de navegación interna -->
+  <div class="season-nav">
+    <div class="container">
+      <div class="season-nav-inner">
+        <a href="#historia" class="season-nav-item">Historia</a>
+        <a href="#armas" class="season-nav-item">Armas</a>
+        <a href="#objetos" class="season-nav-item">Consumibles</a>
+        <a href="#eventos" class="season-nav-item">Eventos</a>
+        <a href="#galeria" class="season-nav-item">Galería</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Historia -->
+  <section id="historia" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Historia de la Temporada</h2>
+      <div class="text-container">
+        <p>La Temporada 1 de Fortnite Battle Royale comenzó el 26 de octubre de 2017 y finalizó el 13 de diciembre de 2017. Fue la primera temporada oficial del juego y marcó el inicio de su evolución como uno de los títulos más populares del género Battle Royale.</p>
+        <p>Durante esta temporada, no existía el Pase de Batalla, sino un sistema de progresión basado en XP, donde los jugadores desbloqueaban recompensas que podían comprar con PaVos. También se introdujo la Tienda de Temporada, que permitía adquirir aspectos exclusivos como el Asaltante Renegado y el Mako, aunque este sistema fue reemplazado en la siguiente temporada por el Pase de Batalla.</p>
+        <p>En cuanto al mapa, no hubo cambios significativos, pero se añadieron decoraciones temáticas de Fortnitenimares, el evento de Halloween. Además, Epic Games comenzó a implementar actualizaciones y parches para mejorar la jugabilidad y equilibrar las armas.</p>
+        <p>Esta temporada fue clave para establecer las bases del juego y dar inicio a una comunidad que, con el tiempo, crecería hasta convertirse en un fenómeno global.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Armas -->
+  <section id="armas" class="season-section weapons-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Armas icónicas de la temporada</h2>
+      <div class="weapons-grid">
+        <!-- Fusil de Asalto -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="RIFLE.jpg" alt="Fusil de Asalto">
+          </div>
+          <div class="weapon-info">
+            <h3>Fusil de Asalto</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 30</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 5.5</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 30</span>
+            </div>
+            <p>El arma básica de la temporada, versátil para cualquier situación.</p>
+          </div>
+        </div>
+        
+        <!-- Fusil de Francotirador -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="SNIPER.jpg" alt="Fusil de Francotirador">
+          </div>
+          <div class="weapon-info">
+            <h3>Fusil de Francotirador</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 105</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 0.8</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 1</span>
+            </div>
+            <p>Perfecto para eliminar enemigos a larga distancia con un solo disparo.</p>
+          </div>
+        </div>
+
+        <!-- Pump Shotgun -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="SHOTGUN.jpg" alt="Pump Shotgun">
+          </div>
+          <div class="weapon-info">
+            <h3>Pump Shotgun</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 128</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 0.7</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 5</span>
+            </div>
+            <p>Escopeta perfecta para eliminar enemigos al principio de la partida.</p>
+          </div>
+        </div>
+
+        <!-- Lanzador de calabazas -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="PUMPKIN.jpg" alt="Lanzador de calabazas">
+          </div>
+          <div class="weapon-info">
+            <h3>Lanzador de calabazas</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 130</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 0.75</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 1</span>
+            </div>
+            <p>Pumpkin Launcher dispara un solo proyectil grande y de movimiento lento, fue incluida en el evento de Fortnitemares</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Consumibles (antes Objetos) -->
+  <section id="objetos" class="season-section items-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Consumibles</h2>
+      <div class="items-grid">
+        <!-- Poción de Escudo -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="SHIELD.jpg" alt="Poción de Escudo">
+          </div>
+          <div class="item-info">
+            <h3>Poción de Escudo</h3>
+            <p>Otorga 25 puntos de escudo al jugador (hasta un máximo de 50).</p>
+          </div>
+        </div>
+        
+        <!-- Medkit -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="MEDKIT.jpg" alt="Medkit">
+          </div>
+          <div class="item-info">
+            <h3>Medkit</h3>
+            <p>Cura al jugador hasta 100 puntos de salud en un lapso de 9 seg.</p>
+          </div>
+        </div>
+        
+        <!-- Slurp-Juice -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="SLURP.jpg" alt="Slurp-Juice">
+          </div>
+          <div class="item-info">
+            <h3>Slurp-Juice</h3>
+            <p>Cura 12 de salud cada segundo curando en su totalidad escudo y vida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Eventos -->
+  <section id="eventos" class="season-section events-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Eventos Importantes</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Oct 26, 2017</div>
+          <div class="timeline-content">
+            <h3>Lanzamiento de la Temporada 1</h3>
+            <p>Fortnite Battle Royale se lanza oficialmente como modo gratuito.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Oct 29, 2017</div>
+          <div class="timeline-content">
+            <h3>Fortnitemares</h3>
+            <p>Evento de Halloween con decoraciones especiales en el mapa.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Dic 13, 2017</div>
+          <div class="timeline-content">
+            <h3>Fin de la Temporada 1</h3>
+            <p>Se prepara el lanzamiento de la Temporada 2 con novedades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Galería -->
+  <section id="galeria" class="season-section gallery-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Galería</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="SEASON1MAP.jpg" alt="Mapa Temporada 1">
+          <p>Mapa original de la Temporada 1</p>
+        </div>
+        <div class="gallery-item">
+          <img src="HLLWNFRTN.jpg" alt="Evento Halloween">
+          <p>Decoraciones de Fortnitemares</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Fortnite Fansite. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
