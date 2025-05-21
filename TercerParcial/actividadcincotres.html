@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <!--Llenar el Title y los metadatos-->
+    <title>Unidad 03 | Actividad 05</title>
+    <link rel="icon" type="image/x-icon"href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="07 de mayo de 2024">
+    <meta name="Descripcion" content="Alert, Confirm & Prompt">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script>
+      function CHECK_DATA(){
+        let = varCadena = "Resumen del formulario\n"
+        //Acceder al formulario
+        let varForm = document.forms["frmRegistro"];
+        //Acceder al control
+        let varNombre = varForm.elements["USER_NAME_TXT"];
+        varCadena += "\n-Nombre de usuario: " + varNombre.value;
+
+        let varClave = varForm.elements["USER_PWD"]
+        varCadena += "\n - Contraseña: " + varClave.value;
+
+        let varNum = varForm.elements["TXT_USER_PHNUM"]
+        varCadena += "\n -Telefono +52: " + varNum.value;
+
+        let varMail = varForm.elements["USER_MAIL"]
+        varCadena += "\n - Correo: " + varMail.value + "@upslp.edu.mx";
+
+        let varFEED = varForm.elements["USER_FEEDBACK"]
+        varCadena += "\n -Mensaje: " + varFEED.value;
+
+        alert(varCadena);
+      }
+    </script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Unidad 03||Actividad 05</h1>
+    <form onsubmit="CHECK_DATA()" class="form-horizontal" name="frmRegistro" action="#" method="post">
+      <fieldset>
+      
+      <!-- Form Name -->
+      <legend>Registro de Usuario</legend>
+      
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="USER_NAME_TXT">Nombre de Usuario</label>  
+        <div class="col-md-6">
+        <input id="USER_NAME_TXT" name="USER_NAME_TXT" type="text" placeholder="Ej. Juan Perez Diaz" class="form-control input-md" required="">
+        <span class="help-block">Escribe tu nombre completo</span>  
+        </div>
+      </div>
+      
+      <!-- Password input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="USER_PWD">Contraseña</label>
+        <div class="col-md-6">
+          <input id="USER_PWD" name="USER_PWD" type="password" placeholder="" class="form-control input-md" required="">
+          <span class="help-block">Debe tener al menos 8 símbolos (únicamente letras y digitos)</span>
+        </div>
+      </div>
+      
+      <!-- Prepended text-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="TXT_USER_PHNUM">Teléfono</label>
+        <div class="col-md-5">
+          <div class="input-group">
+            <span class="input-group-addon">+52</span>
+            <input id="TXT_USER_PHNUM" name="TXT_USER_PHNUM" class="form-control" placeholder="(LADA) 123 4567" type="text">
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Appended Input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="USER_MAIL">Correo Electronico</label>
+        <div class="col-md-6">
+          <div class="input-group">
+            <input id="USER_MAIL" name="USER_MAIL" class="form-control" placeholder="Ej. juan69" type="text" required="">
+            <span class="input-group-addon">@upslp.edu.mx</span>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="USER_FEEDBACK">Caja de Sugerencias</label>
+        <div class="col-md-4">                     
+          <textarea class="form-control" id="USER_FEEDBACK" name="USER_FEEDBACK">! Coloca tus sugerencias aquí !</textarea>
+        </div>
+      </div>
+      
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="BTN_SEND_ACC"></label>
+        <div class="col-md-4">
+          <input type="submit" id="BTN_SEND_ACC" name="BTN_SEND_ACC" class="btn btn-info">
+          <input type="reset" id="BTN_RESET" name="BTN_RESET" class="btn btn-danger">
+        </div>
+      </div>
+      
+      <!-- Button (Double) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="BTNN_HELP">Necesitas ayuda?</label>
+        <div class="col-md-8">
+          <button id="BTTN_HELP" name="BTTN_HELP" class="btn btn-success">Si</button>
+          <button id="BTTN_NO_HELP" name="BTTN_NO_HELP" class="btn btn-danger">No</button>
+        </div>
+      </div>
+      
+      </fieldset>
+      </form>
+  </body>
+ </html>

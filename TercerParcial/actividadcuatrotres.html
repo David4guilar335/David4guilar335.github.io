@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <!--Llenar el Title y los metadatos-->
+    <title>Unidad 03 | Actividad 02</title>
+    <link rel="icon" type="image/x-icon"href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="07 de mayo de 2024">
+    <meta name="Descripcion" content="Alert, Confirm & Prompt">
+    <style>
+        i {text-transform: uppercase; color: red; background-color: aquamarine;}
+    </style>
+  </head>
+  <body>
+    <h1>Actividad 04 || Actividad 04 :: Tema (JavaScript)</h1>
+    <ol>
+      <li id="valor_1"><strong>UPSLP</strong></li>
+      <li id="valor_2"></li><li id="valor_3"></li><li id="valor_4"></li><li id="valor_5"></li>
+      <li id="valor_7"><strong>ITESM(<i>Campus San Luis Potosi</i>)</strong></li>
+      <li id="valor_8"></li><li id="valor_9"></li><li id="valor_10"></li>
+    </ol>
+    <script>
+      //Asignar Contenido
+      document.getElementById("valor_2").textContent = "UCEM";
+      //Recuperar Contenido
+      let varTemp = document.getElementById("valor_1").textContent;
+      document.getElementById("valor_3").textContent = varTemp + "!!!";
+      //Text Content
+      varTemp = document.getElementById("valor_7").textContent;
+      document.getElementById("valor_8").textContent = varTemp;
+      //InnerText
+      varTemp = document.getElementById("valor_7").innerText;
+      document.getElementById("valor_9").innerText = varTemp;
+      //inner HTML
+      varTemp = document.getElementById("valor_7").innerHTML;
+      document.getElementById("valor_10").innerHTML = varTemp;
+
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Unidad 03 | Actividad 02</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="29 de abril de 2024">
+    <meta name="Descripcion" content="Alert, Confirm & Prompt">
+    <style>
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        background-color: #0a8f88;
+        border: 2px solid black;
+      }
+      th, td {
+        border: 1px solid rgba(white, green, blue, 1);
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #ffffff;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #20cfcf;
+        }
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+         }
+
+    </style>
+  </head>
+  <body>
+    <h1>Unidad 3 || Actividad 03-01 :: Tema (Java Script)</h1>
+    <script>
+      let base = Number(window.prompt("Ingrese el número base para la tabla:"));
+      let tablaHTML = "<table><tr><th>No.</th><th>Suma</th><th>Multiplica</th></tr>";
+      
+      for (let i = 1; i <= 10; i++) {
+        tablaHTML += "<tr><td>" + i + "</td><td>" + base + " + " + i + " = " + (base + i) + "</td><td>" + base + " x " + i + " = " + (base * i) + "</td></tr>";
+      }
+      
+      tablaHTML += "</table>";
+      document.write(tablaHTML);
+    </script>
+  </body>
+</html>
+

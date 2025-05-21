@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <!--Llenar el Title y los metadatos-->
+    <title>Unidad 03 | Actividad 02</title>
+    <link rel="icon" type="image/x-icon"href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="29 de abril de 2024">
+    <meta name="Descripcion" content="Alert, Confirm & Prompt">
+  </head>
+  <body>
+    <script>
+     let opc = window.prompt("<<<<<<Menu de Operaciones>>>>>>\n1.Suma\n 2.Restar\n 3.Multiplicacion\n 4.Division\n Que opcion deseas?");
+      let val_1 = Number(window.prompt("Ingrese el primer valor"));
+      let val_2 = Number(window.prompt("Ingrese el segundo valor"));
+      switch(opc){
+        case "1":
+          document.write("<h3>Operacion Suma</h3>");
+          document.write("<code>" + val_1 + "+" + val_2 + "=" + (val_1 + val_2) + "</code>");
+          break;
+          case "1":
+          document.write("<h3>Operacion Suma</h3>");
+          document.write("<code>" + val_1 + "-" + val_2 + "=" + (val_1 - val_2) + "</code>");
+          break;
+          case "1":
+          document.write("<h3>Operacion Suma</h3>");
+          document.write("<code>" + val_1 + "x" + val_2 + "=" + (val_1 * val_2) + "</code>");
+          break;
+          case "1":
+          document.write("<h3>Operacion Suma</h3>");
+          document.write("<code>" + val_1 + "/" + val_2 + "=" + (val_1 / val_2) + "</code>");
+          break;
+      }
+
+    </script>
+  </body>
+</html>
