@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 07</title>
+    <meta charset="utf-8">
+    <meta name="Autor" content="Jesus David">
+    <meta name="Fecha" content="13 de mayo de 2025">
+    <meta name="Descripción" content="JavaScript">
+    <script src="Actividad_07.js"></script>
+</head>
+<body>
+    <h1>Ordena tu combo</h1>
+    <form class="form-horizontal" name="frmOrden" action="#" method="post" onsubmit="functionControlres()">
+        <fieldset>
+            <!--Form Name-->
+            <legend>Controles</legend>
+            <!-- Selección de tamaño de combo -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="groupRadio">Selecciona tu combo</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="groupRadio-0">
+                            <input type="radio" name="groupRadio" id="groupRadio-0" value="99" checked="checked">
+                            Combo pequeño
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="groupRadio-0">
+                            <input type="radio" name="groupRadio" id="groupRadio-1" value="129">
+                            Combo mediano
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="groupRadio-0">
+                            <input type="radio" name="groupRadio" id="groupRadio-2" value="159">
+                            Combo grande
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selección de ingredientes -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="groupCheck">Elige ingredientes</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="groupCheck" value="1">
+                            Queso
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="groupCheck" value="2">
+                            Jamón
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="groupCheck" value="3">
+                            Tocino
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="groupCheck" value="4">
+                            Champiñón
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="groupCheck" value="5">
+                            Pepperoni
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selección de acompañamientos -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectBasic">Elige tus acompañamientos</label>
+                <div class="col-md-5">
+                    <select id="selectBasic" name="selectBasic" class="form-control">
+                        <option value="0">Ninguno</option>
+                        <option value="1">Papas</option>
+                        <option value="2">Brownies</option>
+                        <option value="3">Refresco</option>
+                    </select>
+                </div>
+            </div>
+            <!--Selec Multiple-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectMultiple">Elige otras opciones</label>
+                <div class="col-md-5">
+                    <select id="selectMultiple" name="selectMultiple" class="form-control" multiple="multiple"> 
+                        <option value="1">Mayonesa</option>
+                        <option value="2">Catsup</option>
+                        <option value="3">Mostaza</option>
+                        <option value="4">Ranch</option>
+                        <option value="5">Pepinillos</option>
+                        <option value="6">Jalapeños</option>
+                    </select>
+                </div>
+            </div>
+            <!--Otros Controles-->
+            <div class="form-group">
+                <div class="col-md-8">
+                    <lable>Archivos</lable>&nbsp;<input type="file" id="varFile"><br>
+                    <lable>Color</lable>&nbsp;<input type="color" id="varColor"><br>
+                    <lable>Fechas</lable>&nbsp;<input type="date" id="varDate"><br>
+                    <lable>Tiempo</lable>&nbsp;<input type="time" id="varTime"><br>
+                    <lable>Semana</lable>&nbsp;<input type="week" id="varWeek"><br>
+                    <lable>Mes</lable>&nbsp;<input type="month" id="varMonth"><br>
+                    <lable>Números</lable>&nbsp;<input type="number" id="varNumber" min="0" max="100" step="10" value="50"><br>
+                    <lable>Rango</lable>&nbsp;<input type="range" id="varRange" min="0" max="100" step="1" value="50"><br>
+                </div>
+            </div>
+            <!--Button-->
+            <div class="form-group">
+                <div class="col-md-4">
+                    <input type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-primary">
+                    <input type="reset" id="btnReiniciar" name="btnReiniciar" class="btn btn-info">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
