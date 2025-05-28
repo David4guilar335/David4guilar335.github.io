@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temporada 1 | Fortnite</title>
+  <link rel="icon" type="image/x-icon" href="../Fortnite.ico">
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+     /* ESTA ES LA PALETA DE COLORES DE LA PAGINA !!!NO LA CAMBIES!!! */
+    :root {
+      --black: #0A0A0A;
+      --dark: #121212;
+      --darker: #080808;
+      --darkest: #050505;
+      --light: #FFFFFF;
+      --primary: #00C8FF;
+      --accent: #FFD700;
+      --card-bg: #181818;
+      --header-bg: rgba(10, 10, 10, 0.98);
+      --border: 1px solid rgba(0, 200, 255, 0.1);
+      --border-hover: 1px solid var(--primary);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+      --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light);
+      line-height: 1.7;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+    }
+    
+    /* ES LA FUENTE DEL FORNAIS NO LA CAMBIES */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Burbank Big Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fortnite-gradient-text {
+      background: var(--fortnite-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* A ESTE TAMPOCO LE MUEVAS SE DESCUADRA TODO */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--header-bg);
+      padding: 15px 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo-text {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Estilos del título */
+    h1 {
+      font-size: 4rem;
+      font-family: 'Burbank Big Condensed', sans-serif;
+      background: linear-gradient(135deg, #00C8FF, #FFD700);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Contenedor para el título */
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 50vh;
+    }
+    
+    /* Estilos para el Contenedor de Texto */
+    .text-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(24, 24, 24, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+      text-align: center;
+    }
+    
+    .text-container p {
+      font-size: 1.2rem;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    
+    footer {
+      background-color: var(--darker);
+      color: var(--light);
+      padding: 80px 5% 40px;
+      position: relative;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--fortnite-gradient);
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    
+    .season-nav {
+      background-color: var(--darker);
+      padding: 15px 0;
+      position: sticky;
+      top: 80px;
+      z-index: 900;
+      border-bottom: var(--border);
+    }
+    
+    .season-nav-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .season-nav-item {
+      color: var(--light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(0, 200, 255, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .season-nav-item:hover {
+      background: var(--primary);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+    
+    .season-section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 65px;
+      color: var(--primary);
+      position: relative;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    
+    .weapons-grid, .items-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+    
+    .weapon-card, .item-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    
+    .weapon-card:hover, .item-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+    
+    .weapon-image, .item-image {
+      height: 150px;
+      background: var(--darker);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .weapon-image img, .item-image img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    
+    .weapon-info, .item-info {
+      padding: 20px;
+    }
+    
+    .weapon-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+    
+    .weapon-stats span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: var(--border);
+    }
+    
+    .timeline-date {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .gallery-item {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: var(--border);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-item p {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+   
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .title-container {
+        height: 40vh;
+      }
+      
+      h1 {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .season-nav-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .text-container p {
+        font-size: 1rem;
+      }
+    }
+
+  
+.patches-accordion {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.season-details {
+    margin-bottom: 15px;
+    border: 1px solid #00ccff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.season-summary {
+    padding: 15px 20px;
+    background: linear-gradient(90deg, var(--primary-dark), #1a1a1a);
+    color: #00c8ff;
+    font-family: 'Burbank Big Condensed', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.season-summary::-webkit-details-marker {
+    display: none;
+}
+
+.patches-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+}
+
+.patches-table th, 
+.patches-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgb(0, 204, 255, 0.3);
+}
+
+.patches-table th {
+    background-color: var(--primary-dark);
+    color: #00c8ff;
+}
+
+.patches-table tr:hover {
+    background-color: rgb(0, 200, 255, 0.1);
+}
+
+.patches-table tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .season-summary,
+    .patches-table th, 
+    .patches-table td {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+  /* ESTE ES EL STYLE DEL BACKGROUND */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("FORTCH1S2.jpg"); /* CAMBIAS EL BANNER POR CAPITULO, MTELO EN LA MISMA CARPETA PARA QUE NO TE HAGAS BOLAS xd  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px) brightness(1.0); /* SI LA IMAGEN SE VE FEA CAMBIA EL BLUR, SI SE VE MUY OBSCURA CAMBIA EL BRIGHTNESS */
+  z-index: -2;
+}
+
+/* Ajuste para contenido principal */
+body {
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+  opacity: 0.85;
+  z-index: -1;
+}
+
+/* Estilo para iframe */ /* ESTE ES EL CONTENDOR DE LOS VIDEOS DE TEMPORADA EL QUE SALE AL PRINICPIO DE LA PAGINA */
+.video-container {
+  width: fit-content; 
+  max-width: 100%; 
+  margin: 30px auto; 
+  padding: 15px;   
+  background: var(--card-bg); 
+  border-radius: 12px; 
+  box-shadow: var(--shadow); 
+  position: relative; 
+}
+
+.video-container iframe {
+  display: block; 
+  width: 800px; 
+  height: 450px; 
+  border: none;
+  border-radius: 8px; 
+}
+
+@media (max-width: 900px) {
+  .video-container iframe {
+    width: 600px;
+    height: 338px; 
+  }
+}
+
+@media (max-width: 650px) {
+  .video-container iframe {
+    width: 100%;
+    height: calc(100vw * 0.5625); /* NO LE MUEVAS A ESTE, LOS VIDEOS QUEDAN FEOS xd */
+    max-width: 100%;
+  }
+}
+
+/* Estilos para la seccion de colaboraciones */
+.collaborations-section {
+  padding: 80px 0;
+}
+
+.collab-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.collab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border: var(--border-hover);
+}
+
+.collab-info h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.collab-info p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .collaborations-section .row {
+    flex-direction: column;
+  }
+  
+  .collaborations-section .col-md-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .collab-card {
+    margin-bottom: 30px;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-text">FORTNITE</span>
+    </div>
+<nav>
+  <a href="../proyecto.html">Inicio</a>
+  <a href="../referencias.html">Referencias</a>
+  <a href="../contacto.html">Contacto</a>
+  <a href="../contenido.html">Contenido</a>
+</nav>
+  </header>
+
+  <div class="title-container">
+    <h1>Capitulo 2</h1>
+  </div>
+
+  <!-- MENU (QUITA LA DE NOTICIAS) -->
+  <div class="season-nav">
+    <div class="container">
+      <div class="season-nav-inner">
+        <a href="#historia" class="season-nav-item">Historia</a>
+        <a href="#armas" class="season-nav-item">Armas</a>
+        <a href="#objetos" class="season-nav-item">Consumibles</a>
+        <a href="#eventos" class="season-nav-item">Eventos</a>
+        <a href="#galeria" class="season-nav-item">Galería</a>
+        <a href="#colaboraciones" class="season-nav-item">Colaboraciones</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seccion de Historia (AQUI NAMAS METE EL TEXTO DEL CAPITULO SOLITO SE ACOMODA NO LE CAMBIES NADA)-->
+  <section id="historia" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Historia del Capítulo 2</h2>
+      <div class="text-container">
+        <p>Fortnite Capítulo 2 comenzó el 15 de octubre de 2019 tras el evento "El Fin", presentando un mapa completamente nuevo con mecánicas revolucionarias como natación, pesca y escondites interactivos. Marcó una nueva era con temporadas temáticas y narrativas más profundas.</p>
+        <p>El mapa inicial incluía ubicaciones icónicas como Pleasant Piers y Steamy Stacks, evolucionando drásticamente con eventos que alteraban el terreno, desde inundaciones hasta invasiones alienígenas.</p>
+        <p>Durante sus dos años de duración, el Capítulo 2 destacó por hitos históricos como:</p>
+        <ul style="list-style-position: inside; text-align: center; padding-left: 0";>
+          <li>La Ceremonia de Confinamiento (Temp. 2) que inundó el mapa.</li>
+          <li>La batalla contra Galactus (Temp. 4) con crossover Marvel.</li>
+          <li>El regreso del Cubo Kevin (Temp. 8) y el Sideways.</li>
+          <li>El dispositivo Antimateria (Temp. 8) que destruyó la isla.</li>
+        </ul>
+        <p>Este capítulo consolidó a Fortnite como plataforma multimedia, introduciendo NPCs, armas exóticas y algunos de los eventos colaborativos más ambiciosos de la historia de los videojuegos.</p>
+      </div>
+    </div>
+</section>
+
+ <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3KgmY5NrEzU?si=K-SyEO7XQEU1_bqE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- Seccion de Armas -->
+<section id="armas" class="season-section weapons-section">
+  <div class="container">
+    <h2 class="section-title fortnite-gradient-text">Armas icónicas del Capítulo 2</h2>
+    <div class="weapons-grid">
+      <!-- Fusil MK-Seven -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="drum-gun.jpg" alt="Midas Drum Gun">
+        </div>
+        <div class="weapon-info">
+          <h3>Midas Drum Gun</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 24</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 8.5</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: 40</span>
+          </div>
+          <p>La Drum-gun de Midas es un arma totalmente automática, de disparo rápido y de corto alcance.</p>
+        </div>
+      </div>
+      
+      <!-- Pistola de Tambor -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="deadpool_duales.jpg" alt="Pistola de Tambor">
+        </div>
+        <div class="weapon-info">
+          <h3>Cañones de mano dobles de Deadpool</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 21</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 3.6</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: 18</span>
+          </div>
+          <p>Las originales duales de Deadpool, la unica forma de conseguirlas era acabando con Deadpool.</p>
+        </div>
+      </div>
+
+      <!-- Arco Explosivo -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="kaboom.jpg" alt="Arco Explosivo">
+        </div>
+        <div class="weapon-info">
+          <h3>Arco  de TNTina's Ka-Boom</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 100 (MAX)</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 1</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: 1</span>
+          </div>
+          <p>Arco que dispara flechas explosivas, puedes ser obtenido acabando con TNTinas´s.</p>
+        </div>
+      </div>
+
+      <!-- Lanzacohetes Guiado -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="Kymera.jpg" alt="Pistola de rayos de kimera">
+        </div>
+        <div class="weapon-info">
+          <h3>Pistola de rayos de kimera</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 165</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 15</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: ∞</span>
+          </div>
+          <p>La pistola de rayos Kymera dispara un rayo continuo y 100% preciso cuando se usa. Tiene munición infinita y, como tal, se recarga después de largos períodos de uso.</p>
+        </div>
+      </div>
+
+      <!-- Rifle de Caza -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="guadaña.jpg" alt="Guadaña lateral">
+        </div>
+        <div class="weapon-info">
+          <h3>Guadaña lateral</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 46</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 2.0</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: ∞</span>
+          </div>
+          <p>El jugador puede blandir la guadaña para infligir daño a los oponentes y las estructuras.</p>
+        </div>
+      </div>
+
+      <!-- Rifle de Asalto Exótico (Dub) -->
+      <div class="weapon-card">
+        <div class="weapon-image">
+          <img src="ametralladora.jpg" alt="Ametralladora lateral">
+        </div>
+        <div class="weapon-info">
+          <h3>Ametralladora lateral</h3>
+          <div class="weapon-stats">
+            <span><i class="fas fa-bolt"></i> Daño: 168</span>
+            <span><i class="fas fa-tachometer-alt"></i> Cadencia: 7</span>
+            <span><i class="fas fa-database"></i> Tamaño de cargador: ∞</span>
+          </div>
+          <p>La ametralladora lateral es un arma totalmente automática, de disparo rápido, de alcance medio, no muy precisa, y tiene un temporizador de giro, lo que significa que el jugador no puede dispararla al instante.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seccion de Consumibles -->
+<section id="objetos" class="season-section items-section">
+  <div class="container">
+    <h2 class="section-title fortnite-gradient-text">Consumibles memorables del Capítulo 2</h2>
+    <div class="items-grid">
+      <!-- Slurpfish -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="slurpfish.jpg" alt="Slurpfish">
+        </div>
+        <div class="item-info">
+          <h3>Slurpfish</h3>
+          <p>Cura 50 de salud/escudo y continúa regenerando 15 más durante 5 segundos. Podía pescarse en cualquier agua.</p>
+        </div>
+      </div>
+      
+      <!-- Vendaje Bazooka -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="bandage_bazooka.jpg" alt="Vendaje Bazooka">
+        </div>
+        <div class="item-info">
+          <h3>Bandage Bazooka</h3>
+          <p>Dispositivo que lanza vendajes a distancia, curando 15 de salud a aliados (o a ti mismo).</p>
+        </div>
+      </div>
+      
+      <!-- Coctel Molotov -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="Firefly_Jar.jpg" alt="Cóctel Molotov">
+        </div>
+        <div class="item-info">
+          <h3>Firefly Jar</h3>
+          <p>Crea un área de fuego al romperse, dañando estructuras y jugadores (25 daño por segundo).</p>
+        </div>
+      </div>
+
+      <!-- Storm Flip -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="Storm_Flip.jpg" alt="Storm Flip">
+        </div>
+        <div class="item-info">
+          <h3>Storm Flip</h3>
+          <p>Consumible épico que invertía los efectos de la tormenta en un área pequeña durante 20 segundos.</p>
+        </div>
+      </div>
+
+      <!-- Flopper de Escudo -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="Flopper_fish.jpg" alt="Flopper de Escudo">
+        </div>
+        <div class="item-info">
+          <h3>Flopper de Escudo</h3>
+          <p>Otorgaba 50 de escudo al instante. Uno de los peces más valiosos del Capítulo 2.</p>
+        </div>
+      </div>
+
+      <!-- Hongo Slurp -->
+      <div class="item-card">
+        <div class="item-image">
+          <img src="Gas_Can.jpg" alt="Hongo Slurp">
+        </div>
+        <div class="item-info">
+          <h3>Gasolina</h3>
+          <p>Con este objeto podias rellenar el combustible de los vehiculos, si lo lanazabas y le disparabas era un potente explosivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="parches" class="season-section">
+  <div class="container">
+    <h2 class="section-title fortnite-gradient-text">Actualizaciones y Parches del Capítulo 2</h2>
+    
+    <div class="patches-accordion">
+      <!-- Temporada 2 (Agentes) -->
+      <details class="season-details">
+        <summary class="season-summary">Temporada 2 (Febrero - Abril 2020)</summary>
+        <div class="patches-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Cambios Importantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v12.00</td>
+                <td>20/02/2020</td>
+                <td>Tema de espías: Refugios secretos y NPCs</td>
+              </tr>
+              <tr>
+                <td>v12.20</td>
+                <td>17/03/2020</td>
+                <td>Nueva arma: Dron de Asalto</td>
+              </tr>
+              <tr>
+                <td>v12.50</td>
+                <td>30/04/2020</td>
+                <td>Evento final: Ceremonia de Confinamiento (inundación)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Temporada 3 (Agua) -->
+      <details class="season-details">
+        <summary class="season-summary">Temporada 3 (Junio - Agosto 2020)</summary>
+        <div class="patches-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Cambios Importantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v13.00</td>
+                <td>17/06/2020</td>
+                <td>Mapa inundado: Nuevos vehículos acuáticos</td>
+              </tr>
+              <tr>
+                <td>v13.20</td>
+                <td>21/07/2020</td>
+                <td>Evento Travis Scott (Astronomical)</td>
+              </tr>
+              <tr>
+                <td>v13.40</td>
+                <td>26/08/2020</td>
+                <td>Evento final: El Ascenso (retirada del agua)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Temporada 4 (Marvel) -->
+      <details class="season-details">
+        <summary class="season-summary">Temporada 4 Nexus War (Agosto - Noviembre 2020)</summary>
+        <div class="patches-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Cambios Importantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v14.00</td>
+                <td>27/08/2020</td>
+                <td>Crossover Marvel: Poderes de superhéroes</td>
+              </tr>
+              <tr>
+                <td>v14.10</td>
+                <td>10/09/2020</td>
+                <td>Nuevas armas: Garras de Wolverine</td>
+              </tr>
+              <tr>
+                <td>v14.60</td>
+                <td>01/12/2020</td>
+                <td>Evento final: Galactus vs. El Devastador</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Temporada 5 (Cazadores) -->
+      <details class="season-details">
+        <summary class="season-summary">Temporada 5 (Diciembre 2020 - Marzo 2021)</summary>
+        <div class="patches-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Cambios Importantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v15.00</td>
+                <td>02/12/2020</td>
+                <td>Tema de cazadores: Mandaloriano y NPCs</td>
+              </tr>
+              <tr>
+                <td>v15.20</td>
+                <td>13/01/2021</td>
+                <td>Nuevas armas exóticas (Fusil Dub)</td>
+              </tr>
+              <tr>
+                <td>v15.50</td>
+                <td>16/03/2021</td>
+                <td>Evento final: Operación Sky Fire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Temporada 7 (Alienígenas) -->
+      <details class="season-details">
+        <summary class="season-summary">Temporada 7 (Junio - Septiembre 2021)</summary>
+        <div class="patches-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Cambios Importantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v17.00</td>
+                <td>08/06/2021</td>
+                <td>Invasión alienígena: OVNIs y Kymera</td>
+              </tr>
+              <tr>
+                <td>v17.20</td>
+                <td>06/07/2021</td>
+                <td>Nuevas armas: Rifle de Plasma</td>
+              </tr>
+              <tr>
+                <td>v17.50</td>
+                <td>12/09/2021</td>
+                <td>Evento final: Cubo Queen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+   <!-- Seccion de Galeria (NADA MAS PON 2, SI PONES MAS SE DESCUADRA LA PAGINA Y NO SE COMO ACOMODARLO BIEN :(  )-->
+  <section id="galeria" class="season-section gallery-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Galería</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="Chapter_2_map.jpg" alt="Mapa Capitulo 2">
+          <p>Mapa del capitulo 2</p>
+        </div>
+        <div class="gallery-item">
+          <img src="flood_season3.jpeg" alt="Mapa Inundado">
+          <p>Mapa Inundado temporada 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seccion de Colaboraciones -->
+  <section id="colaboraciones" class="season-section collaborations-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Colaboraciones</h2>
+      <div class="row align-items-center">
+
+        <!-- Colaboracion Avengers -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="collab-card">
+            <div class="collab-info mt-3">
+              <h3>Temporada tematica de Marvel</h3>
+              <p>Fortinte y Marvel decidieron hacer su primera gran colaboracion y que mejor que toda una temporada entera con tematica del universo de Marvel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="video-container">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/Fcl30mWtJQU?si=UTbJC9tPKCKv13Kc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <!--Colaboracion Travis Scott-->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <div class="collab-card">
+            <div class="collab-info mt-3">
+            <h3>Evento de Travis Scott: Astronomical</h3><!--LOS IFRAME CON COPYRIGHT NO FUNCIONAN WWWWW :( , PON UNA IMAGEN RELACIONADA Y LE METES EL LINK CON EL HREF-->
+            <p>Travis Scott decidio hacer concierto mas grande jamas hecho en los videojuegos junto a la exclusiva de una cancion nueva.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+  <div class="image-container">
+    <a href="https://youtu.be/wYeFAlVC8qU?si=XwtFfI0hPT9LVyPk" target="_blank">
+      <img src="travis.jpg" alt="Concierto de Travis Scott en Fortnite" class="img-fluid rounded">
+      <p class="img-caption mt-2">Concierto histórico en Fortnite (Julio 2020)</p>
+    </a>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Seccion de Eventos -->
+<section id="eventos" class="season-section events-section">
+  <div class="container">
+    <h2 class="section-title fortnite-gradient-text">Eventos Importantes - Capítulo 2</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 15, 2019</div>
+        <div class="timeline-content">
+          <h3>Inicio del Capítulo 2</h3>
+          <p>Tras el evento del agujero negro, Fortnite renace con un nuevo mapa, mecánicas de natación y pesca.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Dic 18, 2019</div>
+        <div class="timeline-content">
+          <h3>Star Wars: El Ascenso de Skywalker</h3>
+          <p>Evento crossover con Star Wars, incluyendo sables de luz y una proyección especial en el mapa.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Abr 23, 2020</div>
+        <div class="timeline-content">
+          <h3>Evento de Travis Scott - Astronomical</h3>
+          <p>Concierto masivo en el juego con efectos visuales espectaculares, uno de los eventos más populares.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 17, 2020</div>
+        <div class="timeline-content">
+          <h3>Inundación del Mapa</h3>
+          <p>El nivel del agua comienza a subir, cambiando drásticamente el paisaje del mapa.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Ago 27, 2020</div>
+        <div class="timeline-content">
+          <h3>Temporada Marvel - Nexus War</h3>
+          <p>Colaboración con Marvel, introduciendo héroes como Thor, Iron Man y Galactus como villano principal.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Dic 1, 2020</div>
+        <div class="timeline-content">
+          <h3>Evento Final: El Devorador de Mundos</h3>
+          <p>Batalla épica contra Galactus con participación masiva de jugadores.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 16, 2021</div>
+        <div class="timeline-content">
+          <h3>Evento Zero Crisis Final</h3>
+          <p>El Agente Jones y la Fundación estabilizan la Realidad Cero, culminando la narrativa del Capítulo 2.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 16, 2021</div>
+        <div class="timeline-content">
+          <h3>Fin del Capítulo 2</h3>
+          <p>El mapa es absorbido por la Realidad Cero, dando paso al Capítulo 3 con un nuevo mundo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 Fortnite Fansite. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

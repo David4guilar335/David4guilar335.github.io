@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Contacto | Fortnite</title>
+    <link rel="icon" type="image/x-icon" href="Fortnite.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Autor" content="Jesus y Edwin">
+    <meta name="Descripción" content="Contacta con los creadores de esta página sobre Fortnite">
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Paleta de colores ORIGINAL de Fortnite */
+        :root {
+            --black: #0A0A0A;
+            --dark: #121212;
+            --darker: #080808;
+            --darkest: #050505;
+            --light: #FFFFFF;
+            --light-70: rgba(255, 255, 255, 0.7);
+            --primary: #00C8FF;  
+            --primary-dark: #0078C8;
+            --accent: #FFD700;   
+            --accent-dark: #FFA500;
+            --section-bg: #101010;
+            --card-bg: #181818;
+            --header-bg: rgba(10, 10, 10, 0.98);
+            --border: 1px solid rgba(0, 200, 255, 0.1);
+            --border-hover: 1px solid var(--primary);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+            --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.7;
+            position: relative;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: var(--light);
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--opacity); }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .fortnite-text {
+            color: var(--light);
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+        }
+
+        .fortnite-gradient-text {
+            background: var(--fortnite-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 5%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            position: relative;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .contact-hero {
+            width: 100%;
+            height: 60vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            line-height: 1;
+            color: var(--primary);
+            text-shadow: 3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            color: var(--light-70);
+            margin-bottom: 40px;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .contact-section {
+            padding: 100px 5% 150px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--fortnite-gradient);
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+            width: 350px;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--fortnite-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border: var(--border-hover);
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 5px solid rgba(0, 200, 255, 0.3);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-avatar {
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .contact-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-name {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            transition: all 0.3s ease;
+            font-family: 'Burbank Big Condensed', sans-serif;
+        }
+
+        .contact-card:hover .contact-name {
+            color: var(--primary);
+        }
+
+        .contact-info {
+            color: var(--light-70);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            color: var(--black);
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+        }
+
+        .footer {
+            background-color: var(--darker);
+            color: var(--light);
+            padding: 80px 5% 40px;
+            position: relative;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--fortnite-gradient);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo-text {
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+
+        .footer-about p {
+            color: var(--light-70);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--black);
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-70);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--light-70);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .contact-hero h1 {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .contact-hero {
+                height: auto;
+                padding: 150px 5% 80px;
+                min-height: 400px;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            }
+            
+            .contact-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">FORTNITE</span>
+        </div>
+        <nav class="nav-links">
+            <a href="proyecto.html">Inicio</a>
+            <a href="referencias.html">Referencias</a>
+            <a href="contenido.html">Contenido</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1 class="fortnite-text">CONTACTO</h1>
+            <p>¿Tienes preguntas sobre Fortnite? Nuestro equipo está listo para ayudarte. Ponte en contacto con nosotros a través de los siguientes medios.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2 class="section-title fortnite-text">NUESTRO EQUIPO</h2>
+            
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-avatar">
+                        <img src="images/david.jpg" alt="Jesus Aguilar">
+                    </div>
+                    <h3 class="contact-name fortnite-text">Jesus Aguilar</h3>
+                    <p class="contact-info"><i class="fas fa-envelope"></i> 186289@upslp.edu.mx</p>
+                    <p class="contact-info"><i class="fas fa-phone"></i> +52 4446336715</p>
+                    <div class="contact-social">
+                        <a href="https://github.com/David4guilar335" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-avatar">
+                        <img src="images/edwin.jpg" alt="Edwin Ezquivel">
+                    </div>
+                    <h3 class="contact-name fortnite-text">Edwin Ezquivel</h3>
+                    <p class="contact-info"><i class="fas fa-envelope"></i> 187177@upslp.edu.mx</p>
+                    <p class="contact-info"><i class="fas fa-phone"></i> +52 1487559948</p>
+                    <div class="contact-social">
+                        <a href="https://github.com/EdwinEsquiveI" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">       
+            <div class="footer-bottom">
+                <p>&copy; 2025 Epic Games, Inc. Todos los derechos reservados. Fortnite es una marca registrada de Epic Games.</p>
+                <p>Este es un sitio fan no oficial. No afiliado con Epic Games.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Crear efecto de estrellas
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 3;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Posición aleatoria
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Opacidad y duración aleatoria
+                const opacity = Math.random() * 0.8 + 0.2;
+                const duration = Math.random() * 5 + 3;
+                
+                star.style.setProperty('--opacity', opacity);
+                star.style.setProperty('--duration', `${duration}s`);
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Efecto de scroll para el header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animación de tarjetas al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            
+            const cards = document.querySelectorAll('.contact-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 300);
+            });
+        });
+    </script>
+</body>
+</html>

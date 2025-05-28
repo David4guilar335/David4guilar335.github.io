@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capítulo 3 | Fortnite</title>
+  <link rel="icon" type="image/x-icon" href="../Fortnite.ico">
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --dark: #121212;
+      --darker: #080808;
+      --darkest: #050505;
+      --light: #FFFFFF;
+      --primary: #00C8FF;
+      --accent: #FF7E33;
+      --card-bg: #181818;
+      --header-bg: rgba(10, 10, 10, 0.98);
+      --border: 1px solid rgba(0, 200, 255, 0.1);
+      --border-hover: 1px solid var(--primary);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+      --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+      --primary-dark: #006680;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light);
+      line-height: 1.7;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("FORTCH1S3.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(2px) brightness(1.5);
+      z-index: -2;
+    }
+    
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+      opacity: 0.85;
+      z-index: -1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Burbank Big Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fortnite-gradient-text {
+      background: var(--fortnite-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--header-bg);
+      padding: 15px 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo-text {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    h1 {
+      font-size: 4rem;
+      background: linear-gradient(135deg, #00C8FF, #FF7E33);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 50vh;
+      margin-top: 80px;
+    }
+    
+    .text-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(24, 24, 24, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+      text-align: center;
+      border: var(--border);
+    }
+    
+    .text-container p {
+      font-size: 1.2rem;
+      color: white;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .text-container ul {
+      list-style-position: inside;
+      text-align: center;
+      padding-left: 0;
+      margin: 20px 0;
+    }
+    
+    .text-container li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    
+    footer {
+      background-color: var(--darker);
+      color: var(--light);
+      padding: 80px 5% 40px;
+      position: relative;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      margin-top: 80px;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--fortnite-gradient);
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    .season-nav {
+      background-color: var(--darker);
+      padding: 15px 0;
+      position: sticky;
+      top: 80px;
+      z-index: 900;
+      border-bottom: var(--border);
+    }
+    
+    .season-nav-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .season-nav-item {
+      color: var(--light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(0, 200, 255, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .season-nav-item:hover {
+      background: var(--accent);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+    
+    .season-section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 65px;
+      color: var(--primary);
+      position: relative;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    
+    .weapons-grid, .items-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .weapon-card, .item-card, .collab-card, .gallery-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    
+    .weapon-card:hover, .item-card:hover, .collab-card:hover, .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+    
+    .weapon-image, .item-image {
+      height: 150px;
+      background: var(--darker);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .weapon-image img, .item-image img, .gallery-item img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+    
+    .weapon-info, .item-info, .collab-info, .gallery-item p {
+      padding: 20px;
+    }
+    
+    .weapon-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+      font-size: 0.9rem;
+    }
+    
+    .weapon-stats span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0, 200, 255, 0.1);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: var(--border);
+    }
+    
+    .timeline-date {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-item p {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    .patches-accordion {
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    
+    .season-details {
+      margin-bottom: 15px;
+      border: 1px solid #00ccff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .season-summary {
+      padding: 15px 20px;
+      background: linear-gradient(90deg, var(--primary-dark), #1a1a1a);
+      color: #00c8ff;
+      font-family: 'Burbank Big Condensed', sans-serif;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      list-style: none;
+    }
+    
+    .season-summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .patches-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--card-bg);
+    }
+    
+    .patches-table th, .patches-table td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid rgb(0, 204, 255, 0.3);
+    }
+    
+    .patches-table th {
+      background-color: var(--primary-dark);
+      color: #00c8ff;
+    }
+    
+    .patches-table tr:hover {
+      background-color: rgb(0, 200, 255, 0.1);
+    }
+    
+    .patches-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .video-container {
+      width: fit-content;
+      max-width: 100%;
+      margin: 30px auto;
+      padding: 15px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    
+    .video-container iframe {
+      display: block;
+      width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .section-title {
+        font-size: 3.5rem;
+      }
+      
+      .weapons-grid, .items-grid, .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 3rem;
+      }
+      
+      h1 {
+        font-size: 3.5rem;
+      }
+      
+      .video-container iframe {
+        width: 700px;
+        height: 394px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .title-container {
+        height: 40vh;
+      }
+      
+      h1 {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .season-nav-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .video-container iframe {
+        width: 100%;
+        height: calc(100vw * 0.5625);
+      }
+      
+      .season-summary, .patches-table th, .patches-table td {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 50px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .text-container p {
+        font-size: 1rem;
+      }
+      
+      .text-container {
+        padding: 20px;
+      }
+      
+      .weapons-grid, .items-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+      
+      .weapon-info, .item-info, .collab-info {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body class="ch3-theme">
+  <header>
+    <div class="logo">
+      <span class="logo-text">FORTNITE</span>
+    </div>
+    <nav>
+      <a href="../proyecto.html">Inicio</a>
+      <a href="../referencias.html">Referencias</a>
+      <a href="../contacto.html">Contacto</a>
+      <a href="../contenido.html">Contenido</a>
+    </nav>
+  </header>
+
+  <div class="title-container">
+    <h1>Capítulo 3</h1>
+  </div>
+
+  <!-- Menú de navegación interna -->
+  <div class="season-nav">
+    <div class="container">
+      <div class="season-nav-inner">
+        <a href="#historia" class="season-nav-item">Historia</a>
+        <a href="#armas" class="season-nav-item">Armas</a>
+        <a href="#objetos" class="season-nav-item">Consumibles</a>
+        <a href="#eventos" class="season-nav-item">Eventos</a>
+        <a href="#galeria" class="season-nav-item">Galería</a>
+        <a href="#colaboraciones" class="season-nav-item">Colaboraciones</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Historia -->
+  <section id="historia" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Historia del Capítulo 3</h2>
+      <div class="text-container">
+        <p>El Capítulo 3 de Fortnite comenzó el 5 de diciembre de 2021, introduciendo un nuevo mapa con características dinámicas como terremotos, tornados y deslizamientos. Este capítulo marcó el debut de The Seven como personajes jugables y presentó la mecánica de deslizamiento.</p>
+        <p>El mapa incluía ubicaciones icónicas como Greasy Grove (regresando del Capítulo 1), The Daily Bugle (colaboración con Spider-Man) y la isla flotante de The Seven. La narrativa principal giró en torno a la batalla contra la IO (Imagined Order) y la construcción de la Fundación.</p>
+        <p>Eventos clave del Capítulo 3:</p>
+        <ul>
+          <li>La invasión de la IO y la construcción de la Fundación (Temporada 1)</li>
+          <li>La guerra entre The Seven y la IO (Temporada 2)</li>
+          <li>La aparición de la realidad Zero y el Cubo (Temporada 3)</li>
+          <li>El evento final "Fractura" que destruyó el mapa (Temporada 4)</li>
+        </ul>
+        <p>Este capítulo también introdujo mejoras gráficas significativas con el motor Unreal Engine 5.1, incluyendo iluminación Lumen y sombras de nanite.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tJfXfcWu7mc?si=j8HAcYzCJ2OGPfqO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <!-- Sección de Armas -->
+  <section id="armas" class="season-section weapons-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Armas icónicas del Capítulo 3</h2>
+      <div class="weapons-grid">
+        <!-- MK-Siete -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="mksiete.jpg" alt="MK-Siete">
+          </div>
+          <div class="weapon-info">
+            <h3>MK-Siete</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 24</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 7.5</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 35</span>
+            </div>
+            <p>Fusil de asalto de The Seven con mira térmica integrada.</p>
+          </div>
+        </div>
+        
+        <!-- Fusil de Francotirador Auto -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="fusilauto.jpg" alt="Fusil de Francotirador Auto">
+          </div>
+          <div class="weapon-info">
+            <h3>Fusil Auto</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 40</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 3.0</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 15</span>
+            </div>
+            <p>Francotirador semiautomático con menor daño pero mayor cadencia.</p>
+          </div>
+        </div>
+
+        <!-- Escopeta Striker -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="striker.jpg" alt="Escopeta Striker">
+          </div>
+          <div class="weapon-info">
+            <h3>Striker</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 108</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 1.5</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 6</span>
+            </div>
+            <p>Escopeta de bombeo con buen equilibrio entre daño y cadencia.</p>
+          </div>
+        </div>
+
+        <!-- Lanzador de Cohetes Ranger -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="ranger.jpg" alt="Lanzador de Cohetes Ranger">
+          </div>
+          <div class="weapon-info">
+            <h3>Ranger</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 120</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 0.75</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 1</span>
+            </div>
+            <p>Lanzacohetes con mayor velocidad de proyectil y precisión.</p>
+          </div>
+        </div>
+
+         <!-- SMG Stinger -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="stinger.jpg" alt="SMG Stinger">
+          </div>
+          <div class="weapon-info">
+            <h3>Stinger</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 18</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 12</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 30</span>
+            </div>
+            <p>Subfusil con alta cadencia y bajo retroceso, ideal para combate cercano.</p>
+          </div>
+        </div>
+        
+        <!-- Rifle de Asalto Hammer -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="hammer.jpg" alt="Rifle de Asalto Hammer">
+          </div>
+          <div class="weapon-info">
+            <h3>Hammer</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 35</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 5.5</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 25</span>
+            </div>
+            <p>Fusil de asalto con menor dispersión y mayor precisión a larga distancia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Consumibles -->
+  <section id="objetos" class="season-section items-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Consumibles memorables del Capítulo 3</h2>
+      <div class="items-grid">
+        <!-- Slurp Fish -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="slurpfish.jpg" alt="Slurp Fish">
+          </div>
+          <div class="item-info">
+            <h3>Slurp Fish</h3>
+            <p>Cura 50 puntos de salud o escudo, dependiendo de lo que necesites.</p>
+          </div>
+        </div>
+        
+        <!-- Shield Fish -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="shieldfis.jpg" alt="Shield Fish">
+          </div>
+          <div class="item-info">
+            <h3>Shield Fish</h3>
+            <p>Otorga 25 puntos de escudo al jugador (hasta un máximo de 100).</p>
+          </div>
+        </div>
+        
+        <!-- Hop Flopper -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="hopflopper.jpg" alt="Hop Flopper">
+          </div>
+          <div class="item-info">
+            <h3>Hop Flopper</h3>
+            <p>Otorga el efecto de salto bajo durante 30 segundos.</p>
+          </div>
+        </div>
+
+        <!-- Peppers -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="peppers.jpg" alt="Peppers">
+          </div>
+          <div class="item-info">
+            <h3>Peppers</h3>
+            <p>Aumenta tu velocidad de movimiento durante 20 segundos.</p>
+          </div>
+        </div>
+
+        <!-- Chug Splash -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="chugsplash.jpg" alt="Chug Splash">
+          </div>
+          <div class="item-info">
+            <h3>Chug Splash</h3>
+            <p>Cura 20 puntos de salud o escudo a ti y a tus aliados cercanos.</p>
+          </div>
+        </div>
+
+        <!-- Shield Keg -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="shieldkeg.jpg" alt="Shield Keg">
+          </div>
+          <div class="item-info">
+            <h3>Shield Keg</h3>
+            <p>Otorga escudo a todos los jugadores cercanos durante varios segundos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Actualizaciones -->
+  <section id="eventos" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Actualizaciones y Parches del Capítulo 3</h2>
+      
+      <div class="patches-accordion">
+        <!-- Temporada 1 -->
+        <details class="season-details">
+          <summary class="season-summary">Temporada 1 (Diciembre 2021 - Marzo 2022)</summary>
+          <div class="patches-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Versión</th>
+                  <th>Fecha</th>
+                  <th>Cambios Importantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v19.00</td>
+                  <td>05/12/2021</td>
+                  <td>Lanzamiento del Capítulo 3 con nuevo mapa y mecánica de deslizamiento</td>
+                </tr>
+                <tr>
+                  <td>v19.10</td>
+                  <td>11/01/2022</td>
+                  <td>Introducción del Spider-Man Mythic y el Daily Bugle</td>
+                </tr>
+                <tr>
+                  <td>v19.30</td>
+                  <td>18/01/2022</td>
+                  <td>Nuevas armas: SMG Stinger y Escopeta Auto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- Temporada 2 -->
+        <details class="season-details">
+          <summary class="season-summary">Temporada 2 (Marzo - Junio 2022)</summary>
+          <div class="patches-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Versión</th>
+                  <th>Fecha</th>
+                  <th>Cambios Importantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v20.00</td>
+                  <td>20/03/2022</td>
+                  <td>Tema de resistencia: Guerra entre The Seven y la IO</td>
+                </tr>
+                <tr>
+                  <td>v20.20</td>
+                  <td>19/04/2022</td>
+                  <td>Nuevo vehículo: Ball Tank</td>
+                </tr>
+                <tr>
+                  <td>v20.40</td>
+                  <td>17/05/2022</td>
+                  <td>Evento de guerra: Batalla por Command Cavern</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- Temporada 3 -->
+        <details class="season-details">
+          <summary class="season-summary">Temporada 3 (Junio - Septiembre 2022)</summary>
+          <div class="patches-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Versión</th>
+                  <th>Fecha</th>
+                  <th>Cambios Importantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v21.00</td>
+                  <td>05/06/2022</td>
+                  <td>Tema de realidad Zero: Regreso del Cubo</td>
+                </tr>
+                <tr>
+                  <td>v21.30</td>
+                  <td>18/07/2022</td>
+                  <td>Nuevo biome: Reality Bloom</td>
+                </tr>
+                <tr>
+                  <td>v21.50</td>
+                  <td>30/08/2022</td>
+                  <td>Evento: Cubeslide y cambios en el mapa</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- Temporada 4 -->
+        <details class="season-details">
+          <summary class="season-summary">Temporada 4 (Septiembre - Diciembre 2022)</summary>
+          <div class="patches-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Versión</th>
+                  <th>Fecha</th>
+                  <th>Cambios Importantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v22.00</td>
+                  <td>18/09/2022</td>
+                  <td>Tema de paradigma: Chrome invade la isla</td>
+                </tr>
+                <tr>
+                  <td>v22.20</td>
+                  <td>04/10/2022</td>
+                  <td>Nueva arma: Evolved SC</td>
+                </tr>
+                <tr>
+                  <td>v22.40</td>
+                  <td>03/12/2022</td>
+                  <td>Evento final "Fractura" y fin del Capítulo 3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Galería -->
+  <section id="galeria" class="season-section gallery-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Galería</h2>
+      <div class="gallery-grid">
+        <!-- Imagen 1 -->
+        <div class="gallery-item">
+          <img src="mapacap3.jpg" alt="Nuevo mapa Capítulo 3">
+          <p>El nuevo mapa del Capítulo 3 con sus biomas característicos</p>
+        </div>
+        
+        <!-- Imagen 2 -->
+        <div class="gallery-item">
+          <img src="theseven.jpg" alt="The Seven">
+          <p>The Seven reunidos en la base secreta</p>
+        </div>
+        
+        <!-- Imagen 3 -->
+        <div class="gallery-item">
+          <img src="mecanica.jpg" alt="Mecánica de deslizamiento">
+          <p>Nueva mecánica de deslizamiento introducida este capítulo</p>
+        </div>
+        
+        <!-- Imagen 4 -->
+        <div class="gallery-item">
+          <img src="evento.jpg" alt="Evento Fractura">
+          <p>El evento final "Fractura" que destruyó el mapa</p>
+        </div>
+        
+        <!-- Imagen 5 -->
+        <div class="gallery-item">
+          <img src="spidermanskin.jpg" alt="Colaboración Spider-Man">
+          <p>Colaboración con Spider-Man en la Temporada 1</p>
+        </div>
+        
+        <!-- Imagen 6 -->
+           <div class="gallery-item">
+          <img src="batalla final.jpg" alt="Batalla final">
+          <p>La batalla final contra la IO en el evento de temporada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Colaboraciones -->
+  <section id="colaboraciones" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Colaboraciones del Capítulo 3</h2>
+      <div class="weapons-grid">
+        <!-- Spider-Man -->
+        <div class="collab-card">
+          <div class="weapon-image">
+            <img src="spiderman.jpg" alt="Spider-Man">
+          </div>
+          <div class="collab-info">
+            <h3>Spider-Man</h3>
+            <p>Incluido en la Temporada 1 con su propio Mythic: Telarañas.</p>
+          </div>
+        </div>
+        
+        <!-- Darth Vader -->
+        <div class="collab-card">
+          <div class="weapon-image">
+            <img src="darht.jpg" alt="Darth Vader">
+          </div>
+          <div class="collab-info">
+            <h3>Darth Vader</h3>
+            <p>Apareció como jefe en la Temporada 3 con su sable de luz.</p>
+          </div>
+        </div>
+        
+        <!-- Indiana Jones -->
+        <div class="collab-card">
+          <div class="weapon-image">
+            <img src="indiana.jfif" alt="Indiana Jones">
+          </div>
+          <div class="collab-info">
+            <h3>Indiana Jones</h3>
+            <p>Skin de la Temporada 3 disponible en el pase de batalla.</p>
+          </div>
+        </div>
+        
+        <!-- Dragon Ball -->
+        <div class="collab-card">
+          <div class="weapon-image">
+            <img src="dragom.jfif" alt="Dragon Ball">
+          </div>
+          <div class="collab-info">
+            <h3>Dragon Ball</h3>
+            <p>Colaboración masiva en la Temporada 4 con skins, items y evento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2023 Fortnite Fan Site. Este sitio no está afiliado a Epic Games.</p>
+      <p>Fortnite y todos los derechos relacionados son propiedad de Epic Games.</p>
+      <p>Sitio creado con fines educativos y de fanáticos.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Smooth scrolling para los enlaces del menú
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Efecto sticky para el menú de temporada
+    window.addEventListener('scroll', function() {
+      const seasonNav = document.querySelector('.season-nav');
+      if (window.scrollY > 100) {
+        seasonNav.classList.add('sticky');
+      } else {
+        seasonNav.classList.remove('sticky');
+      }
+    });
+  </script>
+</body>
+</html>

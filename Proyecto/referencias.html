@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Referencias | Fortnite</title>
+    <link rel="icon" type="image/x-icon" href="Fortnite.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Autor" content="Jesus y Edwin">
+    <meta name="Descripción" content="Referencias y enlaces oficiales sobre Fortnite">
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0A0A0A;
+            --dark: #121212;
+            --darker: #080808;
+            --darkest: #050505;
+            --light: #FFFFFF;
+            --light-70: rgba(255, 255, 255, 0.7);
+            --primary: #00C8FF;
+            --primary-dark: #0078C8;
+            --accent: #FFD700;
+            --card-bg: #181818;
+            --header-bg: rgba(10, 10, 10, 0.98);
+            --border: 1px solid rgba(0, 200, 255, 0.1);
+            --border-hover: 1px solid var(--primary);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+            --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--light);
+            line-height: 1.7;
+            background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .fortnite-gradient-text {
+            background: var(--fortnite-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            font-weight: 600;
+            padding: 8px 0;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .references-hero {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .references-hero h1 {
+            font-size: 4rem;
+            color: var(--primary);
+        }
+
+        /* References Section */
+        .references-section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .reference-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .reference-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border: var(--border-hover);
+        }
+
+        .reference-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .reference-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .reference-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .reference-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(0, 200, 255, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            margin-top: 15px;
+        }
+
+        .reference-link:hover {
+            background: var(--primary);
+            color: var(--black);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker);
+            color: var(--light);
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .references-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">FORTNITE</span>
+        </div>
+        <nav class="nav-links">
+            <a href="proyecto.html">Inicio</a>
+            <a href="referencias.html" class="active">Referencias</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="contenido.html">Contenido</a>
+        </nav>
+    </header>
+
+    <section class="references-hero">
+        <div>
+            <h1 class="fortnite-gradient-text">REFERENCIAS</h1>
+            <p class="text-white">Todos los enlaces oficiales y recursos sobre Fortnite</p>
+        </div>
+    </section>
+
+    <!-- Seccion de Referencias -->
+    <section class="references-section">
+        <div class="container">
+            <h2 class="section-title fortnite-gradient-text">RECURSOS OFICIALES</h2>
+            
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <img src="Fortnite.ico" alt="Fortnite">
+                        </div>
+                        <h3 class="reference-name">Página Oficial</h3>
+                        <p>Visita el sitio web oficial de Fortnite para las últimas noticias y actualizaciones.</p>
+                        <a href="https://www.epicgames.com/fortnite/" target="_blank" class="reference-link">Visitar Sitio</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <img src="wikipedia icon.svg" alt="Wikipedia">
+                        </div>
+                        <h3 class="reference-name">Wikipedia</h3>
+                        <p>Información detallada sobre Fortnite, su historia y desarrollo.</p>
+                        <a href="https://es.wikipedia.org/wiki/Fortnite" target="_blank" class="reference-link">Visitar Sitio</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3 class="reference-name">Instagram</h3>
+                        <p>Sigue la cuenta oficial de Fortnite para contenido exclusivo.</p>
+                        <a href="https://www.instagram.com/fortnite/" target="_blank" class="reference-link">Visitar Perfil</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <h3 class="reference-name">TikTok</h3>
+                        <p>Disfruta de clips divertidos en la cuenta oficial de TikTok.</p>
+                        <a href="https://www.tiktok.com/@fortnite" target="_blank" class="reference-link">Visitar Perfil</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                           <i class="fa-brands fa-twitter" style="color: #30bae8;"></i>
+                        </div>
+                        <h3 class="reference-name">Twitter / X</h3>
+                        <p>Mantente al día con los últimos anuncios oficiales.</p>
+                        <a href="https://x.com/Fortnite" target="_blank" class="reference-link">Visitar Perfil</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h3 class="reference-name">Facebook</h3>
+                        <p>Únete a la comunidad de Fortnite en Facebook.</p>
+                        <a href="https://www.facebook.com/FortniteES" target="_blank" class="reference-link">Visitar Página</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="reference-name">GitHub</h3>
+                        <p>Recursos para desarrolladores y APIs de Fortnite.</p>
+                        <a href="https://github.com/topics/fortnite" target="_blank" class="reference-link">Visitar GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="reference-name">Fortnite Wiki</h3>
+                        <p>La enciclopedia más completa sobre Fortnite.</p>
+                        <a href="https://fortnite.fandom.com/" target="_blank" class="reference-link">Visitar Wiki</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h3 class="reference-name">Bootstrap</h3>
+                        <p>Framework CSS utilizado en este sitio web.</p>
+                        <a href="https://getbootstrap.com/" target="_blank" class="reference-link">Visitar Bootstrap</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3 class="reference-name">YouTube Dev</h3>
+                        <p>Información para el uso de videos en desarrollos web.</p>
+                        <a href="https://developers.google.com/youtube?hl=es-419" target="_blank" class="reference-link">Visitar YouTube Dev</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3 class="reference-name">Google Workspace</h3>
+                        <p>Guias de desarollo web de google chrome.</p>
+                        <a href="https://developers.google.com/workspace/guides/get-started?hl=es-419" target="_blank" class="reference-link">Visitar Docs</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fab fa-reddit"></i>
+                        </div>
+                        <h3 class="reference-name">Reddit WebDev</h3>
+                        <p>Comunidad de desarrollo web en Reddit.</p>
+                        <a href="https://www.reddit.com/r/webdev/" target="_blank" class="reference-link">Visitar Reddit</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fa-solid fa-font-awesome"></i>
+                        </div>
+                        <h3 class="reference-name">Font awesome</h3>
+                        <p>De aqui saque los logos xd.</p>
+                        <a href="https://fontawesome.com/" target="_blank" class="reference-link">Visitar Font awesome</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="reference-card">
+                        <div class="reference-icon">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <h3 class="reference-name">CDNJS</h3>
+                        <p>De aqui saque el link para los logos xd.</p>
+                        <a href="https://cdnjs.com/libraries" target="_blank" class="reference-link">Visitar CDNJS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Epic Games, Inc. Todos los derechos reservados. Fortnite es una marca registrada de Epic Games.</p>
+            <p>Este es un sitio fan no oficial. No afiliado con Epic Games.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

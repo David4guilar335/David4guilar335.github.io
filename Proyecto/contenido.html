@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contenido | Fortnite</title>
+  <link rel="icon" type="image/x-icon" href="Fortnite.ico">
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Paleta de colores ORIGINAL de Fortnite */
+    :root {
+      --black: #0A0A0A;
+      --dark: #121212;
+      --darker: #080808;
+      --darkest: #050505;
+      --light: #FFFFFF;
+      --light-70: rgba(255, 255, 255, 0.7);
+      --primary: #00C8FF; 
+      --primary-dark: #0078C8;
+      --accent: #FFD700; 
+      --accent-dark: #FFA500;
+      --section-bg: #101010;
+      --card-bg: #181818;
+      --header-bg: rgba(10, 10, 10, 0.98);
+      --border: 1px solid rgba(0, 200, 255, 0.1);
+      --border-hover: 1px solid var(--primary);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+      --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--black);
+      color: var(--light);
+      overflow-x: hidden;
+      line-height: 1.7;
+      position: relative;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Burbank Big Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .fortnite-text {
+      color: var(--light);
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    }
+    .fortnite-gradient-text {
+      background: var(--fortnite-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--header-bg);
+      padding: 15px 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    .logo-text {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    nav a.active {
+      color: var(--primary);
+    }
+    nav a.active::after {
+      width: 100%;
+    }
+    /* Sección de Redes Sociales */
+    section {
+      padding: 100px 5% 150px;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 60px;
+      color: var(--primary);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    .redes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .red-social {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      flex: 1 1 350px;
+      max-width: 500px;
+      transition: all 0.4s ease;
+      border: var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .red-social::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .red-social:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+    .red-social:hover::before {
+      opacity: 1;
+    }
+    .social-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: var(--light);
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    .social-embed {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Footer estilo Fortnite */
+    footer {
+      background-color: var(--darker);
+      color: var(--light);
+      padding: 80px 5% 40px;
+      position: relative;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--fortnite-gradient);
+    }
+    footer p {
+      color: var(--light-70);
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    .footer-social a:hover {
+      background: var(--primary);
+      color: var(--black);
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+    }
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      nav {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      section {
+        padding: 150px 5% 80px;
+      }
+      .section-title {
+        font-size: 2.5rem;
+      }
+      .red-social {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      .red-social {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+    
+.carousel-inner{
+ max-width: 720px;
+ margin: 0 auto;
+}
+ .carousel-item img {
+ width: 100%; /* Ajusta la imagen al ancho del contenedor */
+ height: 720px; /* Mantiene la proporción de la imagen */
+ object-fit: contain; 
+ }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-text">FORTNITE</span>
+    </div>
+    <nav>
+      <a href="proyecto.html">Inicio</a>
+      <a href="referencias.html">Referencias</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+  
+<!-- Carrusel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+   </ol>
+  <div class="carousel-inner">
+     <div class="carousel-item active">
+       <a href="TEMP1RESOURCES/SEASON 1.html">
+          <img src="CARUSELRESOURCES\SEASON 1\FORTCH1S1.jpg" class="d-block w-100" alt="Capitulo 1">
+       </a>
+  </div>
+   <div class="carousel-item">
+   <a href="CHAP2RESOURCES/CHAPTER2.html">
+   <img src="CHAP2RESOURCES/FORTCH1S2.jpg" class="d-block w-100" alt="Capitulo 2">
+   </a>
+   </div>
+   <div class="carousel-item">
+   <a href="cap3/chapter3.html">
+   <img src="CARUSELRESOURCES\SEASON 1\FORTCH1S3.jpg" class="d-block w-100" alt="Capitulo 3">
+   </a>
+   </div>
+   <div class="carousel-item">
+   <a href="CHAP4RESOURCES/CHAPTER4.html">
+   <img src="CHAP4RESOURCES/ch4.jpg" class="d-block w-100" alt="Capitulo 4">
+   </a>
+   </div>
+   </div>
+   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="sr-only">Anterior</span>
+   </a>
+   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="sr-only">Siguiente</span>
+   </a>
+   </div>  
+  <section id="redes-sociales">
+      <h2 class="section-title fortnite-text" style="text-align: center;">Sigue a Fortnite en sus redes sociales oficiales!</h2>
+
+    <div class="redes-container">
+      <!-- TikTok -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-tiktok"></i> TikTok
+        </div>
+        <div class="social-embed">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fortnite" data-unique-id="fortnite" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+            <section><a target="_blank" href="https://www.tiktok.com/@fortnite?refer=creator_embed">@fortnite</a></section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+      </div>
+      <!-- Facebook -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-facebook"></i> Facebook
+        </div>
+        <div class="social-embed">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFortniteES%2Fvideos%2F2514524352227562%2F&show_text=false&width=560&t=0" width="100%" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+      <!-- Instagram -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-instagram"></i> Instagram
+        </div>
+        <div class="social-embed">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIL0l4tgdYe/" data-instgrm-version="14" style="width:100%; max-width:540px; margin:auto;"></blockquote>
+          <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
+      </div>
+      <!-- Twitter -->
+      <div class="red-social">
+        <div class="-embed">
+          <blockquote class="twitter-tweet"><p lang="en" dir="ltr">shout out to all my fellow Sabrinas line dancing in party royale 💖 <a href="https://t.co/JtHdn8fDuI">pic.twitter.com/JtHdn8fDuI</a></p>— Fortnite (@Fortnite) <a href="https://twitter.com/Fortnite/status/1910041177492971978?ref_src=twsrc%5Etfw">April 9, 2025</a></blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Fortnite Fansite. Todos los derechos reservados.</p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
